@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className='signbtn-menu flex items-center gap-4 sm:gap-6'>
         <Link
           href={'/'}
-          className=' border border-[#fefefe] text-[#fefefe] text-sm px-4 py-2 rounded'
+          className=' border border-[#fefefe] text-[#fefefe] text-sm px-3 py-[6px] sm:py-2 rounded'
         >
           Se connecter
         </Link>
