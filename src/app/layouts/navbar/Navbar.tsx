@@ -16,7 +16,7 @@ const links: LinksInterface[] = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <div className='bg-blackPurple z-[9999]'>
+    <div className='bg-blackPurple z-[999]'>
       <div className='px-4 sm:px-6 lg:px-12 py-2 flex items-center justify-between max-w-[1800px] mx-auto'>
         <div className='logo w-[48px] sm:w-[56px] h-auto'>
           <Image

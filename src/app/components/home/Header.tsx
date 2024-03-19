@@ -7,7 +7,7 @@ const workSans = Work_Sans({ subsets: ['latin'] })
 
 const Header = () => {
   return (
-    <div className='w-full min-h-[70vh] max-w-[1600px] mx-auto mt-4 sm:mt-8 flex items-center justify-center flex-col px-2 sm:px-8 xl:px-20'>
+    <div className='w-full min-h-[70vh] mt-4 sm:mt-8 flex items-center justify-center flex-col px-2 sm:px-8 xl:px-20'>
       <h1
         className={`font-extrabold ${workSans.className} text-green text-3xl sm:text-4xl xl:text-5xl text-center mb-4 lg:mb-6`}
       >
@@ -22,7 +22,7 @@ const Header = () => {
       </p>
       <Link
         href={'/about'}
-        className=' bg-white text-black cursor-pointer px-8 sm:px-12 py-2 rounded flex items-center gap-4'
+        className=' bg-white text-black cursor-pointer px-8 sm:px-12 py-2 rounded flex items-center gap-4 hover:text-green duration-500'
       >
         Explorer
         <RocketLaunchIcon />

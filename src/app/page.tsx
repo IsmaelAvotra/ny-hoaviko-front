@@ -1,9 +1,11 @@
-import Header from './components/Header'
+import ByProvince from './components/home/ByProvince'
+import Header from './components/home/Header'
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between'>
+    <main className='min-h-screen ] max-w-[1600px] mx-auto'>
       <Header />
+      <ByProvince />
     </main>
   )
 }
