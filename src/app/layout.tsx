@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter, Work_Sans, Montserrat } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
-import Navbar from './layouts/Navbar'
-import Footer from './layouts/Footer'
+import Navbar from './layouts/navbar/Navbar'
+import Footer from './layouts/footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Ny hoaviko App',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-[#050F1D] text-[#fefefe]`}>
+      <body className={`${montserrat.className} bg-[#050F1D] text-[#fefefe]`}>
         <Navbar />
         {children}
         <Footer />
