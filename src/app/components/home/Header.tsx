@@ -21,7 +21,7 @@ const Header = () => {
         doloremque eius sit illum ipsam qui nemo beatae sed aliquid numquam.
       </p>
       <Link
-        href={'/about'}
+        href={'/universities'}
         className=' bg-white text-black cursor-pointer px-8 sm:px-12 py-2 rounded flex items-center gap-4 hover:text-green duration-500'
       >
         Explorer
