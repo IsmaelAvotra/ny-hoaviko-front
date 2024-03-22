@@ -6,7 +6,7 @@ import { Work_Sans } from 'next/font/google'
 
 const workSans = Work_Sans({ subsets: ['latin'] })
 
-const UniverityCard = () => {
+const UniversityCard = () => {
   return (
     <div className=' bg-black p-2 rounded-lg border border-white/40'>
       <div className='top'>
@@ -45,4 +45,4 @@ const UniverityCard = () => {
   )
 }
 
-export default UniverityCard
+export default UniversityCard
