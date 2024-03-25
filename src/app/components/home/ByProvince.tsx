@@ -33,7 +33,7 @@ const provinces: ProvinceInterface[] = [
 
 const ByProvince = () => {
   return (
-    <div className='px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-16'>
+    <div className='px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-16 mb-8'>
       <h2
         className={`relative text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-medium ${workSans.className}`}
       >

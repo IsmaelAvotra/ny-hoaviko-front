@@ -6,9 +6,14 @@ import { Work_Sans } from 'next/font/google'
 
 const workSans = Work_Sans({ subsets: ['latin'] })
 
-const UniversityCard = () => {
+const UniversityCard = ({
+  name,
+  description,
+  location,
+  rating,
+}: UniversityCard) => {
   return (
-    <div className=' bg-black p-2 rounded-lg border border-white/40'>
+    <div className=' bg-blackPurple/80 px-3 py-4 rounded-lg border border-white/40 cursor-pointer hover:border-green/40 duration-300 hover:scale-[101%]'>
       <div className='top'>
         <Image
           src={'/assets/card-test.jpg'}
@@ -16,27 +21,26 @@ const UniversityCard = () => {
           width={1000}
           height={667}
           className='rounded-md'
+          placeholder='blur'
+          blurDataURL={'/assets/card-test.jpg'}
         />
       </div>
       <div className='bottom mt-3'>
         <h2
           className={`${workSans.className} text-xl font-semibold text-yellow mb-2`}
         >
-          Université Mohamed IV
+          {name}
         </h2>
-        <p className='text-sm'>
-          Rem laudantium beatae et voluptatibus rerum qui quae quibusdam et
-          internos dolorem cum sunt atque et voluptatibus rerum qui quae qui.
-        </p>
-        <div className='location-rate mt-4 flex items-center justify-between mb-2 px-2'>
+        <p className='text-sm text-justify'>{description}</p>
+        <div className='location-rate mt-4 flex items-center justify-between mb-2'>
           <div className='location flex items-center gap-2'>
             <LocationOnIcon className='text-yellow' />
-            <p>Casablanca, Maroc</p>
+            <p>{location}</p>
           </div>
           <div className='rate flex items-center gap-2'>
             <StarIcon className='text-yellow' />
             <p>
-              <span className='font-semibold text-yellow'>4.5</span> / 5
+              <span className='font-semibold text-yellow'>{rating}</span> / 5
             </p>
           </div>
         </div>
