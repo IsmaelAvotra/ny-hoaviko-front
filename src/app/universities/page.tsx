@@ -43,7 +43,10 @@ const Universities = () => {
     <div className='min-h-screen relative pb-16'>
       <div className='title bg-black fixed top-16 w-full md:flex md:flex-row-reverse pt-4 pb-2 sm:py-6 md:py-6 md:pt-8 px-4 md:px-6 xl:px-10 flex flex-col gap-4 lg:items-center justify-between z-[99]'>
         <div className='flex items-center justify-between w-full gap-4 md:flex-[1.5]'>
-          <SearchComponent onSearch={handleSearch} />
+          <SearchComponent
+            onSearch={handleSearch}
+            placeholder={'Chercher une université ...'}
+          />
           <TuneIcon
             className='text-[28px] md:text-[32px] xl:text-[36px] text-white/75 cursor-pointer hover:text-white'
             onClick={() => setFilterIsOpen(true)}

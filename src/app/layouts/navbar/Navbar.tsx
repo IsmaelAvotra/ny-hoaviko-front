@@ -8,7 +8,7 @@ import CloseIcon from '@mui/icons-material/Close'
 const links: LinksInterface[] = [
   { name: 'Home', link: '/' },
   { name: 'Universities', link: '/' },
-  { name: 'Filières', link: '/' },
+  { name: 'Filières', link: '/programs' },
   { name: 'About', link: '/about' },
   { name: 'Contact', link: '/' },
 ]

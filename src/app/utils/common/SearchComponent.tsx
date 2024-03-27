@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search'
 
 interface SearchComponentProps {
   onSearch: (searchTerm: string) => void
+  placeholder: string
 }
 
 function useDebounceValue(value: string, time = 250) {
@@ -21,7 +22,10 @@ function useDebounceValue(value: string, time = 250) {
   return debounceValue
 }
 
-const SearchComponent: React.FC<SearchComponentProps> = ({ onSearch }) => {
+const SearchComponent: React.FC<SearchComponentProps> = ({
+  onSearch,
+  placeholder,
+}) => {
   const [searchTerm, setSearchTerm] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -64,7 +68,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ onSearch }) => {
         type='search'
         ref={inputRef}
         className='bg-white text-black text-sm rounded outline-none block w-full p-2.5 xl:py-3 relative'
-        placeholder='Chercher une université ...'
+        placeholder={placeholder}
         value={searchTerm}
         onChange={handleChange}
         onKeyDown={handleKeyDown}

@@ -1,16 +1,16 @@
 interface FilterModalProps {
   selectedType: string
   setSelectedType: (type: string) => void
-  selectedProvince: string
-  setSelectedProvince: (province: string) => void
+  selectedGraduation: string
+  setSelectedGraduation: (province: string) => void
   applyFilterAndCloseModal: () => void
 }
 
 const FilterModal = ({
   selectedType,
   setSelectedType,
-  selectedProvince,
-  setSelectedProvince,
+  selectedGraduation,
+  setSelectedGraduation,
   applyFilterAndCloseModal,
 }: FilterModalProps) => {
   return (
@@ -21,40 +21,39 @@ const FilterModal = ({
         </h3>
         <form action='' className='mt-8 grid grid-cols-1 gap-4'>
           <div className='flex flex-col gap-[6px]'>
-            <label htmlFor='univ_type' className='text-[15px] font-medium'>
-              Type d'université :
+            <label htmlFor='program_type' className='text-[15px] font-medium'>
+              Type de Programme :
             </label>
             <select
               name='type'
-              id='univ_type'
+              id='program_type'
               className=' px-2 py-2 rounded border border-blackPurple/40 font-light'
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
             >
               <option value='all'>Tout</option>
-              <option value='private'>Privée</option>
-              <option value='public'>Public</option>
-              <option value='semi-private'>Semi-privée</option>
+              <option value='private'>Gratuit</option>
+              <option value='public'>Payant</option>
             </select>
           </div>
           <div className='flex flex-col gap-[6px]'>
-            <label htmlFor='province' className='text-[15px] font-medium'>
-              Par province :
+            <label
+              htmlFor='graduation_type'
+              className='text-[15px] font-medium'
+            >
+              Type de diplome :
             </label>
             <select
-              name='province'
-              id='province'
+              name='type'
+              id='graduation_type'
               className=' px-2 py-2 rounded border border-blackPurple/40 font-light'
-              value={selectedProvince}
-              onChange={(e) => setSelectedProvince(e.target.value)}
+              value={selectedGraduation}
+              onChange={(e) => setSelectedGraduation(e.target.value)}
             >
               <option value='all'>Tout</option>
-              <option value='antananarivo'>Antananarivo</option>
-              <option value='antsiranana'>Antsiranana</option>
-              <option value='mahajanga'>Mahajanga</option>
-              <option value='fianarantsoa'>Fianarantsoa</option>
-              <option value='toamasina'>Toamasina</option>
-              <option value='toliara'>Toliara</option>
+              <option value='licence'>Licence</option>
+              <option value='master'>Master</option>
+              <option value='doctor'>Doctorat</option>
             </select>
           </div>
         </form>
