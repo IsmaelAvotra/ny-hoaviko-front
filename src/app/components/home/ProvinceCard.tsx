@@ -6,7 +6,7 @@ const ProvinceCard: React.FC<ProvinceInterface> = ({ name, path }) => {
   return (
     <Link
       className='w-full bg-black border border-white hover:border-green/40 rounded-md px-8 sm:px-12 py-4 sm:py-8 flex flex-col gap-2 sm:gap-4 items-center duration-200 hover:scale-[101%]'
-      href={'/'}
+      href={`/universities/provinces/${name.toLocaleLowerCase()}`}
     >
       <Image
         src={path}
