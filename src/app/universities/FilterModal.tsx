@@ -1,3 +1,4 @@
+"use client"
 interface FilterModalProps {
   selectedType: string
   setSelectedType: (type: string) => void

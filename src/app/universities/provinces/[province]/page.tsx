@@ -75,8 +75,8 @@ export async function generateStaticParams() {
         ) : (
           <NoResults />
         )}
-  
-        {/* {false && (
+{/*   
+        {false && (
           <FilterModal
             selectedType={selectedType}
             setSelectedType={setSelectedType}
@@ -84,7 +84,7 @@ export async function generateStaticParams() {
             setSelectedProvince={setSelectedProvince}
             applyFilterAndCloseModal={applyFilterAndCloseModal}
           />
-        )} */}
+        )}  */}
       </div>
     );
   }

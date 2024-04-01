@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TuneIcon from '@mui/icons-material/Tune'
 
 import UniversityCard from '../components/universities/UniversityCard'
@@ -9,33 +9,47 @@ import FilterModal from './FilterModal'
 import NoResults from './NoResults'
 
 const Universities = () => {
-  const [filteredUniversities, setFilteredUniversities] = useState([])
+  const [universities, setUniversities] = useState<University[]>([])
+  const [filteredUniversities, setFilteredUniversities] = useState<
+    University[]
+  >([])
   const [filterIsOpen, setFilterIsOpen] = useState(false)
   const [selectedType, setSelectedType] = useState('all')
   const [selectedProvince, setSelectedProvince] = useState('all')
 
-  const handleSearch = async (newSearchTerm: string) => {
-    const fetchedUniversities = await getUniversities(newSearchTerm)
-    setFilteredUniversities(fetchedUniversities)
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedUniversities = await getUniversities()
+      setUniversities(fetchedUniversities)
+      setFilteredUniversities(fetchedUniversities)
+    }
+    fetchData()
+  }, [])
+
+  const handleSearch = (searchTerm: string) => {
+    const searchResults = universities.filter((university) =>
+      university.univName.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setFilteredUniversities(searchResults)
   }
 
   const applyFilterAndCloseModal = () => {
     setFilterIsOpen(false)
-    const filtered = filteredUniversities.filter((university: any) => {
-      if (selectedType !== 'all' && university.type !== selectedType) {
+    const filtered = universities.filter((university: University) => {
+      if (
+        selectedType !== 'all' &&
+        university.universityType !== selectedType
+      ) {
         return false
       }
       if (
         selectedProvince !== 'all' &&
-        university.province !== selectedProvince
+        university.univLocation.province !== selectedProvince
       ) {
         return false
       }
       return true
     })
-    console.log('selectedType=>', selectedType)
-    console.log('selectedProvince=>', selectedProvince)
-
     setFilteredUniversities(filtered)
   }
 

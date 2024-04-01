@@ -39,14 +39,10 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   const handleSearch = () => {
     if (debounceSearchTerm.length > 0) {
       onSearch(debounceSearchTerm)
-    }
-  }
-
-  useEffect(() => {
-    if (debounceSearchTerm === '') {
+    } else {
       onSearch('')
     }
-  }, [debounceSearchTerm, onSearch])
+  }
 
   useEffect(() => {
     const input = inputRef.current

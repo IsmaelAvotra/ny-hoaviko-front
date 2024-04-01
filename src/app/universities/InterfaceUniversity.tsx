@@ -26,7 +26,7 @@ interface University {
   univName: string
   univLocation: Location
   presentation: string
-  isPrivate: boolean
+  universityType: string
   tuition: number
   contact: Contact
   imageUrl: string
